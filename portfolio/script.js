@@ -1,6 +1,5 @@
-// Function to load pages dynamically
 function loadPage(page) {
-    fetch(`pages/${page}.html`)
+    fetch(`/portfolio/pages/${page}.html`) // Update the path
         .then(response => response.text())
         .then(data => {
             document.getElementById('content-container').innerHTML = data;
@@ -10,6 +9,3 @@ function loadPage(page) {
             document.getElementById('content-container').innerHTML = '<p>Page not found.</p>';
         });
 }
-
-// Load the default page (About) on initial load
-window.onload = () => loadPage('about');
